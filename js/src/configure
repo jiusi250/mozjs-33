@@ -6827,7 +6827,6 @@ if test "$GNU_CXX"; then
     # -Werror=int-to-pointer-cast - catches cast to pointer from integer of different size
     # -Wtype-limits - catches overflow bugs, few false positives
     # -Wempty-body - catches bugs, e.g. "if (c); foo();", few false positives
-    # -Werror=conversion-null - catches conversions between NULL and non-pointer types
     # -Wsign-compare - catches comparison of signed and unsigned types
     #
     _WARNINGS_CXXFLAGS="${_WARNINGS_CXXFLAGS} -Wall -Wpointer-arith -Woverloaded-virtual"
@@ -7035,51 +7034,6 @@ echo "$ac_t""$ac_cxx_has_wempty_body" 1>&6
         _WARNINGS_CXXFLAGS="${_WARNINGS_CXXFLAGS} -Wempty-body"
     fi
 
-    
-    echo $ac_n "checking whether the C++ compiler supports -Werror=conversion-null""... $ac_c" 1>&6
-echo "configure:7041: checking whether the C++ compiler supports -Werror=conversion-null" >&5
-if eval "test \"`echo '$''{'ac_cxx_has_werror_conversion_null'+set}'`\" = set"; then
-  echo $ac_n "(cached) $ac_c" 1>&6
-else
-  
-            
-            ac_ext=C
-# CXXFLAGS is not in ac_cpp because -g, -O, etc. are not valid cpp options.
-ac_cpp='$CXXCPP $CPPFLAGS'
-ac_compile='${CXX-g++} -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext 1>&5'
-ac_link='${CXX-g++} -o conftest${ac_exeext} $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
-cross_compiling=$ac_cv_prog_cxx_cross
-
-            _SAVE_CXXFLAGS="$CXXFLAGS"
-            CXXFLAGS="$CXXFLAGS -Werror -Werror=conversion-null"
-            cat > conftest.$ac_ext <<EOF
-#line 7057 "configure"
-#include "confdefs.h"
-
-int main() {
-return(0);
-; return 0; }
-EOF
-if { (eval echo configure:7064: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>&5; }; then
-  rm -rf conftest*
-  ac_cxx_has_werror_conversion_null="yes"
-else
-  echo "configure: failed program was:" >&5
-  cat conftest.$ac_ext >&5
-  rm -rf conftest*
-  ac_cxx_has_werror_conversion_null="no"
-fi
-rm -f conftest*
-            CXXFLAGS="$_SAVE_CXXFLAGS"
-            ac_ext=c
-# CFLAGS is not in ac_cpp because -g, -O, etc. are not valid cpp options.
-ac_cpp='$CPP $CPPFLAGS'
-ac_compile='${CC-cc} -c $CFLAGS $CPPFLAGS conftest.$ac_ext 1>&5'
-ac_link='${CC-cc} -o conftest${ac_exeext} $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
-cross_compiling=$ac_cv_prog_cc_cross
-
-        
-fi
 
 echo "$ac_t""$ac_cxx_has_werror_conversion_null" 1>&6
     if test "${ac_cxx_has_werror_conversion_null}" = "yes"; then
