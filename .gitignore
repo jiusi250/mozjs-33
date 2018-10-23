@@ -1,1 +1,4 @@
 js/src/build_debug
+
+cmake-build-debug
+.idea
