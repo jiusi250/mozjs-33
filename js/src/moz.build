@@ -66,6 +66,7 @@ EXPORTS += [
     'jsutil.h',
     'jsversion.h',
     'jswrapper.h',
+    'NamespaceImports.h',
     'perf/jsperf.h',
 ]
 

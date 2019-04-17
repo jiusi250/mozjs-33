@@ -764,6 +764,7 @@ js_DumpPC(JSContext *cx)
     return ok;
 }
 
+//JS_FRIEND_API(bool)
 bool
 js_DumpScript(JSContext *cx, JSScript *scriptArg)
 {
@@ -776,19 +777,6 @@ js_DumpScript(JSContext *cx, JSScript *scriptArg)
     fprintf(stdout, "%s", sprinter.string());
     return ok;
 }
-
-//JS_FRIEND_API(bool)
-//js_DumpScript(JSContext *cx, JSScript *scriptArg)
-//{
-//    js::gc::AutoSuppressGC suppressGC(cx);
-//    Sprinter sprinter(cx);
-//    if (!sprinter.init())
-//        return false;
-//    RootedScript script(cx, scriptArg);
-//    bool ok = js_Disassemble(cx, script, true, &sprinter);
-//    fprintf(stdout, "%s", sprinter.string());
-//    return ok;
-//}
 
 /*
  * Useful to debug ReconstructPCStack.
