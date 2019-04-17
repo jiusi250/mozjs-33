@@ -1,4 +1,6 @@
 js/src/build_debug
 
+*.pyc
+
 cmake-build-debug
 .idea
