@@ -740,7 +740,7 @@ class MOZ_STACK_CLASS Rooted : public js::RootedBase<T>
     {
         MOZ_GUARD_OBJECT_NOTIFIER_INIT;
 #ifdef JS_DEBUG
-        MOZ_ASSERT(js::IsInRequest(cx));
+//        MOZ_ASSERT(js::IsInRequest(cx));
 #endif
         init(js::ContextFriendFields::get(cx));
     }

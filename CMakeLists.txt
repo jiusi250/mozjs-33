@@ -3,7 +3,8 @@ project(decompiler)
 include(ExternalProject)
 
 set(CMAKE_CXX_STANDARD 11)
-set(SPIDER_BUILD_DIR ${PROJECT_SOURCE_DIR}/js/src/build_debug)
+set(SPIDER_DIR ${PROJECT_SOURCE_DIR}/js/src)
+set(SPIDER_BUILD_DIR ${SPIDER_DIR}/build_debug)
 
 file(MAKE_DIRECTORY ${SPIDER_BUILD_DIR})
 
@@ -11,8 +12,8 @@ ExternalProject_Add(spidermonkey
         PREFIX ${SPIDER_BUILD_DIR}/dist
         DOWNLOAD_COMMAND ""
         SOURCE_DIR ${SPIDER_BUILD_DIR}
-        CONFIGURE_COMMAND ${SPIDER_BUILD_DIR}/../configure_osx.sh
-        BUILD_COMMAND make
+        CONFIGURE_COMMAND ${SPIDER_DIR}/configure_osx.sh
+        BUILD_COMMAND make -j4
         BUILD_IN_SOURCE 1
         INSTALL_COMMAND "")
 

@@ -819,7 +819,6 @@ GetNextPc(jsbytecode *pc)
 
 } /* namespace js */
 
-#if defined(DEBUG)
 /*
  * Disassemblers, for debugging only.
  */
@@ -830,10 +829,11 @@ unsigned
 js_Disassemble1(JSContext *cx, JS::Handle<JSScript*> script, jsbytecode *pc, unsigned loc,
                 bool lines, js::Sprinter *sp);
 
-#endif
-
 void
 js_DumpPCCounts(JSContext *cx, JS::Handle<JSScript*> script, js::Sprinter *sp);
+
+bool
+js_DumpScript(JSContext *cx, JSScript *scriptArg);
 
 #ifdef JS_ION
 namespace js {

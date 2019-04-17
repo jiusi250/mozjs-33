@@ -46,18 +46,47 @@ EXPORTS += [
     'js.msg',
     'jsalloc.h',
     'jsapi.h',
+    'jsatom.h',
     'jsbytecode.h',
     'jsclist.h',
+    'jscntxt.h',
     'jscpucfg.h',
     'jsfriendapi.h',
+    'jsgc.h',
+    'jslock.h',
+    'jsobj.h',
+    'jsopcode.h',
     'jsprf.h',
     'jsprototypes.h',
     'jsproxy.h',
     'jspubtd.h',
+    'jsscript.h',
+    'jsstr.h',
     'jstypes.h',
+    'jsutil.h',
     'jsversion.h',
     'jswrapper.h',
     'perf/jsperf.h',
+]
+
+EXPORTS.ds += [
+    'ds/BitArray.h',
+]
+
+EXPORTS.frontend += [
+    'frontend/SourceNotes.h',
+]
+
+EXPORTS.gc += [
+    'gc/Barrier.h',
+    'gc/Heap.h',
+    'gc/Marking.h',
+    'gc/Memory.h',
+    'gc/Rooting.h',
+]
+
+EXPORTS.jit += [
+    'jit/IonCode.h',
 ]
 
 # If you add a header here, add it to js/src/jsapi-tests/testIntTypesABI.cpp so
@@ -92,6 +121,15 @@ EXPORTS.js += [
     '../public/Value.h',
     '../public/Vector.h',
     '../public/WeakMapPtr.h',
+]
+
+EXPORTS.vm += [
+    'vm/CommonPropertyNames.h',
+    'vm/Opcodes.h',
+    'vm/Shape.h',
+    'vm/String.h',
+    'vm/Unicode.h',
+    'vm/Xdr.h',
 ]
 
 UNIFIED_SOURCES += [
